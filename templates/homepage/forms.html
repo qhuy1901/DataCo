@@ -207,30 +207,6 @@
 											<div class="form-group form-floating-label">
 												<select class="form-control input-border-bottom" id="Customer_State" required>
 													<option value="">&nbsp;</option>
-													<option value="AL">AL</option>
-													<option value="AR">AR</option>
-													<option value="AZ">AZ</option>
-													<option value="CO">CO</option>
-													<option value="CT">CT</option>
-													<option value="CA">CA</option>
-													<option value="DC">DC</option>
-													<option value="DE">DE</option>
-													<option value="FL">FL</option>
-													<option value="GA">GA</option>
-													<option value="HI">HI</option>
-													<option value="IA">IA</option>
-													<option value="ID">ID</option>
-													<option value="IL">IL</option>
-													<option value="IN">IN</option>
-													<option value="KS">KS</option>
-													<option value="KY">KY</option>
-													<option value="LA">LA</option>
-													<option value="PR">PR</option>
-													<option value="MA">MA</option>
-													<option value="MD">MD</option>
-													<option value="MI">MI</option>
-													<option value="MN">MN</option>
-													<option value="MT">MO</option>
 												</select>
 												<label for="selectFloatingLabel" class="placeholder">Customer State</label>
 											</div>
@@ -238,8 +214,6 @@
 											<div class="form-group form-floating-label">
 												<select class="form-control input-border-bottom" id="Customer_City" required>
 													<option value="">&nbsp;</option>
-													<option value="Bekasi">Bekasi</option>
-													<option value="Townsville">Townsville</option>
 												</select>
 												<label for="selectFloatingLabel" class="placeholder">Customer City</label>
 											</div>
@@ -258,17 +232,6 @@
 											<div class="form-group form-floating-label">
 												<select class="form-control input-border-bottom" id="Order_Region" required>
 													<option value="">&nbsp;</option>
-													<option value="Canada">Canada</option>
-													<option value="Caribean">Caribean</option>
-													<option value="Central Africa">Central Africa</option>
-													<option value="Central America">Central America</option>
-													<option value="Central Asia">Central Asia</option>
-													<option value="East Africa">East Africa</option>
-													<option value="East of USA">East of USA</option>
-													<option value="Eastern Asia">East Asia</option>
-													<option value="Southeast Asia">Southeast Asia</option>
-													<option value="South Asia">South Asia</option>
-													<option value="Oceania">Oceania</option>
 												</select>
 												<label for="selectFloatingLabel" class="placeholder">Order Region</label>
 											</div>
@@ -276,28 +239,6 @@
 											<div class="form-group form-floating-label">
 												<select class="form-control input-border-bottom" id="Order_Country" required>
 													<option value="">&nbsp;</option>
-													<option value="Australia">Australia</option>
-													<option value="Canada">Canada</option>
-													<option value="Angola">Angola</option>
-													<option value="Argelia">Argelia</option>
-													<option value="Brasil">Brasil</option>
-													<option value="Bolivia">Bolivia</option>
-													<option value="Chile">Chile</option>
-													<option value="Burundi">Burundi</option>
-													<option value="Colombia">Colombia</option>
-													<option value="Cuba">Cuba</option>
-													<option value="Dinamarca">Dinamarca</option>
-													<option value="Estonia">Estonia</option>
-
-													<option value="Francia">Francia</option>
-													<option value="Ghana">Ghana</option>
-													<option value="Hong Kong">Hong Kong</option>
-													<option value="Indonesia">Indonesia</option>
-													<option value="India">India</option>
-													<option value="Israel">Israel</option>
-													<option value="Italia">Italia</option>
-													<option value="Laos">Laos</option>
-													<option value="Libia">Libia</option>
 												</select>
 												<label for="selectFloatingLabel" class="placeholder">Order Country</label>
 											</div>
@@ -305,23 +246,6 @@
 											<div class="form-group form-floating-label">
 												<select class="form-control input-border-bottom" id="Order_State" required>
 													<option value="">&nbsp;</option>
-													<option value="Abia">Abia</option>
-													<option value="Maine">Maine</option>
-													<option value="Java Occidental">Java Occidental</option>
-													<option value="Queensland">Queensland</option>
-													<option value="Guangdong">Guangdong</option>
-													<option value="Tokio">Tokio</option>
-													<option value="Célebes Septentrional">Célebes Septentrional</option>
-													<option value="Victoria">Victoria</option>
-													<option value="Maharashtra">Maharashtra</option>
-													<option value="Guangxi">Guangxi</option>
-													<option value="Delhi">Delhi</option>
-													<option value="Gansu">Gansu</option>
-													<option value="Zhejiang">Zhejiang</option>
-													<option value="Kansas">Kansas</option>
-													<option value="Guangxi">Singapur</option>
-													<option value="Nueva Gales del Sur">Nueva Gales del Sur</option>
-													<option value="Karnataka">Karnataka</option>
 												</select>
 												<label for="selectFloatingLabel" class="placeholder">Order State</label>
 											</div>
@@ -329,8 +253,6 @@
 											<div class="form-group form-floating-label">
 												<select class="form-control input-border-bottom" id="Order_City" required>
 													<option value="">&nbsp;</option>
-													<option value="Bekasi">Bekasi</option>
-													<option value="Townsville">Townsville</option>
 												</select>
 												<label for="selectFloatingLabel" class="placeholder">Order City</label>
 											</div>
@@ -378,6 +300,7 @@
 			</footer>
 		</div>
 	</div>
+	
 	<!--   Core JS Files   -->
 	<script src="{% static 'assets/js/core/jquery.3.2.1.min.js' %}"></script>
 	<script src="{% static 'assets/js/core/popper.min.js' %}"></script>
@@ -393,6 +316,7 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="{% static 'assets/js/setting-demo2.js' %}"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="/static/assets/js/add_options.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.lds-roller').hide();
@@ -425,7 +349,7 @@
 				if($('#Shipping_on_time').is(":checked"))
 					Delivery_Status = 'Shipping on time';
 				$.ajax({
-					url: '{% url 'show_result' %}',
+					url: "{% url 'show_result' %}",
 					methed:"GET",
 					data:{'Order_City': Order_City, 'Order_Region':Order_Region, 'Order_Country':Order_Country, 'Delivery_Status':Delivery_Status,
 					'Shipping_Mode':Shipping_Mode, 'Order_Date':Order_Date,'Delivery_Date':Delivery_Date,'Customer_State':Customer_State,
