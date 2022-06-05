@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*)j6t33a=*#wl60hn73*h0myw1k@b=ce$u9jg+9kv=od-ei@cn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'delivery-time-prediction-w1.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'dataco-delivery-time-pred-2.herokuapp.com']
 
 
 # Application definition
