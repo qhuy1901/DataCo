@@ -1,0 +1,1 @@
+web: gunicorn Delivery_time_prediction_website.wsgi --log-file -
