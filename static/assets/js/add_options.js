@@ -5507,11 +5507,11 @@ const AddOptions = (selectMenuID, arrayValue) => {
     select.appendChild(option);
   }
 };
-AddOptions("Customer_State", CustomerState);
-AddOptions("Customer_City", CustomerCity);
-AddOptions("Order_Region", OrderRegion);
-AddOptions("Order_Country", OrderCountry);
-AddOptions("Order_State", OrderState);
-AddOptions("Order_City", OrderCity);
+AddOptions("Customer_State", CustomerState.sort());
+AddOptions("Customer_City", CustomerCity.sort());
+AddOptions("Order_Region", OrderRegion.sort());
+AddOptions("Order_Country", OrderCountry.sort());
+AddOptions("Order_State", OrderState.sort());
+AddOptions("Order_City", OrderCity.sort());
 
 
