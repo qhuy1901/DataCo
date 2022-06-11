@@ -7,6 +7,67 @@
 	<title>DataCo - Delivery Time Prediction</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{% static 'assets/img/icon.ico'%}" type="image/x-icon"/>
+	<style>
+		.switch {
+		  position: relative;
+		  display: inline-block;
+		  width: 46px;
+		  height: 20px;
+		}
+		
+		.switch input { 
+		  opacity: 0;
+		  width: 0;
+		  height: 0;
+		}
+		
+		.slider {
+		  position: absolute;
+		  cursor: pointer;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: #ccc;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+		
+		.slider:before {
+		  position: absolute;
+		  content: "";
+		  height: 12px;
+		  width: 12px;
+		  left: 4px;
+		  bottom: 4px;
+		  background-color: white;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+		
+		input:checked + .slider {
+		  background-color: #2196F3;
+		}
+		
+		input:focus + .slider {
+		  box-shadow: 0 0 1px #2196F3;
+		}
+		
+		input:checked + .slider:before {
+		  -webkit-transform: translateX(26px);
+		  -ms-transform: translateX(26px);
+		  transform: translateX(26px);
+		}
+		
+		/* Rounded sliders */
+		.slider.round {
+		  border-radius: 34px;
+		}
+		
+		.slider.round:before {
+		  border-radius: 50%;
+		}
+		</style>
 
 	<!-- Fonts and icons -->
 	<script src="{% static 'assets/js/plugin/webfont/webfont.min.js'%}"></script>
@@ -122,15 +183,15 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#hi">
 								<i class="fas fa-th-list"></i>
-								<p>Chu Xuan Son</p>
+								<p>Nguyen Thi Thuy Nga</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						{% comment %} <li class="nav-item">
 							<a data-toggle="collapse" href="#hi">
 								<i class="fas fa-th-list"></i>
 								<p>Ng. Anh Truong Thang</p>
 							</a>
-						</li>
+						</li> {% endcomment %}
 					</ul>
 				</div>
 			</div>
@@ -217,8 +278,8 @@
 												</select>
 												<!-- <label for="selectFloatingLabel" class="placeholder">Customer City</label> -->
 											</div>
+											<label class="mt-3 mb-3"><b>Shipping Mode</b></label>
 											<div class="form-group">
-												<label for="defaultSelect">Shipping Mode</label>
 												<select class="form-control form-control" id="Shipping_Mode">
 													<option>Standard Class</option>
 													<option>First Class</option>
@@ -264,8 +325,13 @@
 								<div id="predict_result" style="margin:40px"></div>
 								<div style="margin:20px"></div>
 								<div class="card-action">
-									<button class="btn btn-success" id="submit_btn">Submit</button>
-									<button class="btn btn-danger" id="clear_btn">Clear</button>
+									<button class="btn btn-success" id="submit_btn" style="margin-right: 10px; width: 150px; font-weight: bold; float: right;">SUBMIT</button>
+									{% comment %} <button class="btn btn-danger" id="clear_btn">CLEAR</button> {% endcomment %}
+									<label class="switch"> 
+										<input type="checkbox" id="showMultipleAlgorithms">
+										<span class="slider round"></span>
+									</label> 
+									<p style="display:inline; margin-left:10px;font-size: 16px;">Show multiple algorithms and detail</p>
 								</div>
 							</div>
 						</div>
@@ -346,6 +412,9 @@
 				var Customer_City = $('#Customer_City').val();
 				var Shipping_Mode = $('#Shipping_Mode').val();
 				var Payment_Method = 'DEBIT';
+				var showMultipleAlgorithms = 0;
+				if($('#showMultipleAlgorithms').is(":checked"))
+					showMultipleAlgorithms = 1;
 				if($('#RBG_TRANSFER').is(":checked"))
 					Payment_Method = 'TRANSFER';
 				if($('#RBG_CASH').is(":checked"))
@@ -366,7 +435,7 @@
 					methed:"GET",
 					data:{'Order_City': Order_City, 'Order_Region':Order_Region, 'Order_Country':Order_Country, 'Delivery_Status':Delivery_Status,
 					'Shipping_Mode':Shipping_Mode, 'Order_Date':Order_Date,'Delivery_Date':Delivery_Date,'Customer_State':Customer_State,
-					'Customer_City':Customer_City, 'Order_State':Order_State, 'Payment_Method':Payment_Method },
+					'Customer_City':Customer_City, 'Order_State':Order_State, 'Payment_Method':Payment_Method, 'showMultipleAlgorithms':showMultipleAlgorithms },
 					success:function(data)
 					{
 						$('#predict_result').show();
