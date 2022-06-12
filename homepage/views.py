@@ -196,7 +196,7 @@ def print_result_with_ID3_algorithm(prediction, Delivery_Date):
                         <td>{}</td>
                         <td>{}</td>
                         <td style="color:green">{}</td>
-                    </tr>""".format(prediction.loc[i, "rmse"], prediction.loc[i, "Fastest_shipment"], prediction.loc[i, "Avg_shipment"], Fastest_shipment_date.strftime("%b %d, %Y"), Avg_shipment_date.strftime("%b %d, %Y"), risk + " (" +prediction.loc[i, "accuracy_score"]+ ")")
+                    </tr>""".format( prediction.loc[i, "Fastest_shipment"], prediction.loc[i, "Avg_shipment"], Fastest_shipment_date.strftime("%b %d, %Y"), Avg_shipment_date.strftime("%b %d, %Y"), risk + " (" +prediction.loc[i, "accuracy_score"]+ ")")
 
     result += "</tbody></table>"
     return result
